@@ -18,7 +18,8 @@ pipeline {
 
    stage ('build')
          {
-     sh ' ng build ' 
+           steps{
+                sh ' ng build '  }
      }
     }
 }
