@@ -14,7 +14,7 @@ pipeline {
                 }
             }
 
-      stage('Install') {
+   /*   stage('Install') {
       steps { sh 'npm install' }
     }
 stage ('install angular cli ')
@@ -26,7 +26,7 @@ steps  {sh'npm i -g @angular/cli'
 
     stage('Build') {
       steps { sh 'npm run-script build' }
-    }
+    }*/
  stage('Building our image') {
 steps{
 sh 'docker build -t arafarania/tpachatfront:1.0.0 .'

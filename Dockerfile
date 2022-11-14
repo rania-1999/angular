@@ -1,4 +1,4 @@
-FROM node:16.3.0 as node
+FROM node:alpine3.14 as node
 WORKDIR    /app
 COPY . .
 RUN npm install
@@ -9,7 +9,7 @@ RUN npm run build
 FROM nginx:1.15.12
 
 # Copy the build output to replace the default nginx contents.
-COPY /usr/local/app/dist/crudtuto-front /usr/share/nginx/html
+COPY --from=node /usr/local/app/dist/crudtuto-front /usr/share/nginx/html
 
 # Expose port 75
 EXPOSE 75
