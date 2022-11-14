@@ -1,6 +1,6 @@
 
 # Use official node image as the base image
-FROM node:16.3.0-alpine as build
+FROM node:16.3.0 as build
 
 # Set the working directory
 WORKDIR /usr/local/app
@@ -18,7 +18,7 @@ RUN npm run build
 # Stage 2: Serve app with nginx server
 
 # Use official nginx image as the base image
-FROM nginx:1.17.1-alpine
+FROM nginx:1.15.12
 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/local/app/dist/crudtuto-front /usr/share/nginx/html
