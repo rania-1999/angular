@@ -1,4 +1,8 @@
-
+FROM node:16.3.0 as node
+WORKDIR    /app
+COPY . .
+RUN npm install
+RUN npm run build
 
 
 # Use official nginx image as the base image
