@@ -25,8 +25,8 @@ steps  {sh'npm i -g @angular/cli'
    stage ('build')
          {
            steps{
-                sh ' npm run ng '
-sh 'ng build '
+               
+sh 'ng build --prod'
   }
      }
     }
