@@ -4,6 +4,11 @@ pipeline {
 
    tools {nodejs '16.3.0'
 }
+  environment {
+     
+           DOCKERHUB_CREDENTIALS= credentials('dockerhub') 
+        
+    }
 
     stages {
          stage ('Checkout GIT'){
@@ -14,7 +19,7 @@ pipeline {
                 }
             }
 
-   /*   stage('Install') {
+  /*  stage('Install') {
       steps { sh 'npm install' }
     }
 stage ('install angular cli ')
